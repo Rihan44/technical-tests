@@ -324,7 +324,7 @@
   <p class="mb-4 text-gray-600">Mostrando {total} pokémon(s)</p>
   
   {#if selectedPokemons.size > 0}
-    <div class="flex flex-col mt-6 bg-gray-50 p-4 rounded mb-5">
+    <div class="flex flex-col mt-6 bg-gray-50 p-4 rounded-xl shadow mb-5">
       <h4 class="font-semibold mb-2">Pokémon seleccionados:</h4>
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {#each Array.from(selectedPokemons) as pokemon}
