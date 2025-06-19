@@ -56,7 +56,7 @@
       )
     );
 
-    const cleanedPokemons = pokemonsData.map(p => ({
+    const pokemonData = pokemonsData.map(p => ({
       name: p.name,
       height: p.height,
       weight: p.weight,
@@ -72,16 +72,16 @@
     }));
 
     if (addMore) {
-      pokemons.update(current => [...current, ...cleanedPokemons]);
+      pokemons.update(current => [...current, ...pokemonData]);
       isLoadingMore = false;
     } else {
-      pokemons.set(cleanedPokemons);
+      pokemons.set(pokemonData);
       isLoading = false;
       offset = 0;
     }
 
     const abilitySet = new Set();
-    cleanedPokemons.forEach(p =>
+    pokemonData.forEach(p =>
       p.abilities.forEach(ab => abilitySet.add(ab))
     );
     abilities.set(Array.from(abilitySet));
